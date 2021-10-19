@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>To do list</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/main.css" />
+		<script
+			src="https://kit.fontawesome.com/488c7bbaa5.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<div class="to-do-list">
+			<div class="header">
+				<div class="main-tools-panel">
+					<button class="add-todo-btn">
+						<i class="far fa-plus-square"></i>
+					</button>
+					<button class="check-all-btn">
+						<i class="fa fa-check-double"></i>
+					</button>
+					<button class="delete-all-btn">
+						<i class="fas fa-trash-alt"></i>
+					</button>
+					<button class="show-info-btn"><i class="fas fa-question"></i></button>
+				</div>
+				<h1>To do:</h1>
+			</div>
+			<div class="todos-area">
+				<ol class="todos-list">
+					<li class="todo-item">
+						Make a to-do list just like everybody else does.
+						<div class="todo-tools-panel">
+							<button class="check-btn"><i class="fas fa-check"></i></button>
+							<button class="edit-btn">EDIT</button>
+							<button class="delete-btn"><i class="fas fa-times"></i></button>
+						</div>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<div class="create-todo-popup modal">
+			<label for="todo-input">Add item</label>
+			<input type="text" id="todo-input" />
+			<button class="add-todo-btn">Add</button>
+			<button class="close-todo-popup-btn">Cancel</button>
+		</div>
+        <div class="edit-todo-popup modal">
+			<label for="edit-input">Edit task</label>
+			<input type="text" id="edit-input" />
+			<button class="add-edited-todo-btn">Add</button>
+			<button class="close-edit-popup-btn">Cancel</button>
+		</div>
+		<div class="modal todo-list-info">
+			<div class="modal-content">
+				<p><i class="far fa-plus-square"></i> - add a new task.</p>
+				<p><i class="fa fa-check-double"></i> - mark all tasks as completed.</p>
+				<p><i class="fas fa-trash-alt"></i> - delete all tasks.</p>
+				<button class="close-modal-btn">Close</button>
+			</div>
+		</div>
+		<script src="./script/script.js"></script>
+	</body>
+</html>
