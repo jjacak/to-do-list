@@ -1,0 +1,261 @@
+@import 'colors';
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-family: 'Caveat', cursive;
+	background-image: url(../images/wood-gf2b8a3fbc_640.jpg);
+	background-position: center;
+	background-size: cover;
+}
+
+.to-do-list {
+	position: relative;
+	background: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	width: 800px;
+	max-width: 80vw;
+	min-height: 70vh;
+	padding: 30px;
+	color: $main-font-color;
+
+	&:before,
+	&:after {
+		content: '';
+		position: absolute;
+		height: 98%;
+		width: 100%;
+		z-index: -1;
+	}
+
+	&:before {
+		background: #fafafa;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+		left: -4px;
+		top: 4px;
+		transform: rotate(-1.3deg);
+	}
+
+	&:after {
+		background: #f5f5f5;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+		right: -3px;
+		top: 1px;
+		transform: rotate(1.4deg);
+	}
+
+	.header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 25px;
+
+		.main-tools-panel {
+			align-self: flex-end;
+			margin-bottom: 10px;
+
+			button {
+				background: none;
+				border: none;
+				padding: 6px;
+				font-size: 12px;
+				cursor: pointer;
+				transition: transform 0.3s;
+			}
+			button:hover {
+				transform: scale(1.03);
+			}
+			.add-todo-btn {
+				color: $checked-color;
+				font-size: 14px;
+			}
+		}
+		h1 {
+			font-size: 24px;
+		}
+	}
+	.todos-area {
+		.todo-item {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+
+			p {
+				max-width: 60%;
+			}
+			.todo-tools-panel {
+				button {
+					background: none;
+					border: none;
+					padding: 2px;
+					cursor: pointer;
+				}
+				.check-btn {
+					color: $checked-color;
+				}
+				button.checked {
+					color:$checked-font-color;
+				}
+				.delete-btn {
+					color: $delete-btn;
+				}
+			}
+		}
+
+		.checked {
+			color: $checked-font-color;
+			text-decoration: line-through;
+		}
+	}
+}
+
+.modal,
+.popup {
+	position: absolute;
+	top: 50%;
+	right: 50%;
+	display: flex;
+	flex-direction: column;
+	transform: translate(50%, -50%);
+	font-family: 'Roboto', sans-serif;
+	font-size: 13px;
+	background-image: linear-gradient(60deg, #242b33 0%, #3e4750 100%);
+	color: $modal-font-color;
+	border-radius: 8px;
+	padding: 20px 30px;
+	visibility: hidden;
+
+	button {
+		display: inline-block;
+		align-self: center;
+		width: 120px;
+		margin-top: 20px;
+		padding: 5px 20px;
+		border:none;
+		font-family: 'Roboto', sans-serif;
+		font-size: 13px;
+		background-color: $modal-font-color;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: $button-hover-color;
+	}
+}
+
+.modal-shadow {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	visibility: hidden;
+}
+
+.popup {
+	justify-content: space-evenly;
+	align-items: center;
+	width: 800px;
+	height: 200px;
+	max-width: 80vw;
+
+	label {
+		font-size: 18px;
+	}
+
+	input {
+		width: 100%;
+		padding: 5px;
+		background-color: $modal-font-color;
+		border:none;
+		border-radius: 5px;
+		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+	}
+
+	.buttons {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 10px;
+
+		button {
+			margin-top: 0;
+		}
+		
+	}
+}
+
+.info-popup {
+	width: 400px;
+	height: 230px;
+	max-width: 60vw;
+	line-height: 1.5;
+}
+
+.visible {
+	visibility: visible;
+}
+
+@media (min-width: 576px) {
+	body {
+		background-image: url(../images/wood-g25a7a993a_1920.jpg);
+	}
+	.to-do-list {
+		.header {
+			.main-tools-panel {
+				button {
+					font-size: 16px;
+				}
+				.add-todo-btn {
+					color: $checked-color;
+					font-size: 22px;
+				}
+			}
+			h1 {
+				font-size: 36px;
+			}
+		}
+		.todos-area {
+			font-size: 20px;
+
+			.todo-item {
+				p {
+					max-width: 80%;
+				}
+				.todo-tools-panel {
+					button {
+					}
+				}
+			}
+		}
+	}
+	.modal,
+	.popup {
+		font-size: 16px;
+		padding: 15px 25px;
+
+		button {
+			font-size: 16px;
+		}
+	}
+	.popup {
+		label {
+			font-size: 24px;
+		}
+
+		input {
+			padding: 7px;
+			font-size: 16px;
+		}
+	}
+
+}

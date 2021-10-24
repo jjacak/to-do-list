@@ -1,1 +1,295 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  font-family: 'Caveat', cursive;
+  background-image: url(../images/wood-gf2b8a3fbc_640.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.to-do-list {
+  position: relative;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 800px;
+  max-width: 80vw;
+  min-height: 70vh;
+  padding: 30px;
+  color: #010129;
+}
+
+.to-do-list:before, .to-do-list:after {
+  content: '';
+  position: absolute;
+  height: 98%;
+  width: 100%;
+  z-index: -1;
+}
+
+.to-do-list:before {
+  background: #fafafa;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  left: -4px;
+  top: 4px;
+  -webkit-transform: rotate(-1.3deg);
+          transform: rotate(-1.3deg);
+}
+
+.to-do-list:after {
+  background: #f5f5f5;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  right: -3px;
+  top: 1px;
+  -webkit-transform: rotate(1.4deg);
+          transform: rotate(1.4deg);
+}
+
+.to-do-list .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+
+.to-do-list .header .main-tools-panel {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.to-do-list .header .main-tools-panel button {
+  background: none;
+  border: none;
+  padding: 6px;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+.to-do-list .header .main-tools-panel button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+}
+
+.to-do-list .header .main-tools-panel .add-todo-btn {
+  color: #3e8f04;
+  font-size: 14px;
+}
+
+.to-do-list .header h1 {
+  font-size: 24px;
+}
+
+.to-do-list .todos-area .todo-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.to-do-list .todos-area .todo-item p {
+  max-width: 60%;
+}
+
+.to-do-list .todos-area .todo-item .todo-tools-panel button {
+  background: none;
+  border: none;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.to-do-list .todos-area .todo-item .todo-tools-panel .check-btn {
+  color: #3e8f04;
+}
+
+.to-do-list .todos-area .todo-item .todo-tools-panel button.checked {
+  color: #01012954;
+}
+
+.to-do-list .todos-area .todo-item .todo-tools-panel .delete-btn {
+  color: #c90404;
+}
+
+.to-do-list .todos-area .checked {
+  color: #01012954;
+  text-decoration: line-through;
+}
+
+.modal,
+.popup {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transform: translate(50%, -50%);
+          transform: translate(50%, -50%);
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  background-image: linear-gradient(60deg, #242b33 0%, #3e4750 100%);
+  color: #fafafa;
+  border-radius: 8px;
+  padding: 20px 30px;
+  visibility: hidden;
+}
+
+.modal button,
+.popup button {
+  display: inline-block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 120px;
+  margin-top: 20px;
+  padding: 5px 20px;
+  border: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  background-color: #fafafa;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal button:hover,
+.popup button:hover {
+  background-color: #f1f1f1;
+}
+
+.modal-shadow {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+}
+
+.popup {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 800px;
+  height: 200px;
+  max-width: 80vw;
+}
+
+.popup label {
+  font-size: 18px;
+}
+
+.popup input {
+  width: 100%;
+  padding: 5px;
+  background-color: #fafafa;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+}
+
+.popup .buttons button {
+  margin-top: 0;
+}
+
+.info-popup {
+  width: 400px;
+  height: 230px;
+  max-width: 60vw;
+  line-height: 1.5;
+}
+
+.visible {
+  visibility: visible;
+}
+
+@media (min-width: 576px) {
+  body {
+    background-image: url(../images/wood-g25a7a993a_1920.jpg);
+  }
+  .to-do-list .header .main-tools-panel button {
+    font-size: 16px;
+  }
+  .to-do-list .header .main-tools-panel .add-todo-btn {
+    color: #3e8f04;
+    font-size: 22px;
+  }
+  .to-do-list .header h1 {
+    font-size: 36px;
+  }
+  .to-do-list .todos-area {
+    font-size: 20px;
+  }
+  .to-do-list .todos-area .todo-item p {
+    max-width: 80%;
+  }
+  .modal,
+  .popup {
+    font-size: 16px;
+    padding: 15px 25px;
+  }
+  .modal button,
+  .popup button {
+    font-size: 16px;
+  }
+  .popup label {
+    font-size: 24px;
+  }
+  .popup input {
+    padding: 7px;
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
