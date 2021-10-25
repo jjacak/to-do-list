@@ -5,6 +5,10 @@
           box-sizing: border-box;
 }
 
+button > * {
+  pointer-events: none;
+}
+
 body {
   position: relative;
   display: -webkit-box;
@@ -170,12 +174,19 @@ body {
   visibility: hidden;
 }
 
-.modal button,
-.popup button {
+.modal .buttons,
+.popup .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.modal .buttons button,
+.popup .buttons button {
   display: inline-block;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
   width: 120px;
   margin-top: 20px;
   padding: 5px 20px;
@@ -229,14 +240,8 @@ body {
 }
 
 .popup .buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   gap: 10px;
 }
 

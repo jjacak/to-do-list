@@ -5,6 +5,10 @@
 	box-sizing: border-box;
 }
 
+button > * {
+	pointer-events: none;
+  }
+
 body {
 	position: relative;
 	display: flex;
@@ -133,21 +137,24 @@ body {
 	padding: 20px 30px;
 	visibility: hidden;
 
-	button {
-		display: inline-block;
-		align-self: center;
-		width: 120px;
-		margin-top: 20px;
-		padding: 5px 20px;
-		border:none;
-		font-family: 'Roboto', sans-serif;
-		font-size: 13px;
-		background-color: $modal-font-color;
-		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-		border-radius: 5px;
-		cursor: pointer;
+	.buttons {
+		display: flex;
+		justify-content: center;
+		button {
+			display: inline-block;
+			width: 120px;
+			margin-top: 20px;
+			padding: 5px 20px;
+			border:none;
+			font-family: 'Roboto', sans-serif;
+			font-size: 13px;
+			background-color: $modal-font-color;
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			cursor: pointer;
+		}
+	
 	}
-
 	button:hover {
 		background-color: $button-hover-color;
 	}
@@ -182,9 +189,7 @@ body {
 	}
 
 	.buttons {
-		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
 		gap: 10px;
 
 		button {
