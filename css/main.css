@@ -17,9 +17,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   height: 100vh;
   font-family: 'Caveat', cursive;
   background-image: url(../images/wood-gf2b8a3fbc_640.jpg);
@@ -36,6 +36,7 @@ body {
   max-width: 80vw;
   min-height: 70vh;
   padding: 30px;
+  margin-top: 15vh;
   color: #010129;
 }
 
@@ -53,8 +54,8 @@ body {
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   left: -4px;
   top: 4px;
-  -webkit-transform: rotate(-1.3deg);
-          transform: rotate(-1.3deg);
+  -webkit-transform: rotate(-0.7deg);
+          transform: rotate(-0.7deg);
 }
 
 .to-do-list:after {
@@ -63,8 +64,8 @@ body {
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
   right: -3px;
   top: 1px;
-  -webkit-transform: rotate(1.4deg);
-          transform: rotate(1.4deg);
+  -webkit-transform: rotate(0.9deg);
+          transform: rotate(0.9deg);
 }
 
 .to-do-list .header {

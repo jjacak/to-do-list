@@ -7,13 +7,13 @@
 
 button > * {
 	pointer-events: none;
-  }
+}
 
 body {
 	position: relative;
 	display: flex;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	height: 100vh;
 	font-family: 'Caveat', cursive;
 	background-image: url(../images/wood-gf2b8a3fbc_640.jpg);
@@ -29,6 +29,7 @@ body {
 	max-width: 80vw;
 	min-height: 70vh;
 	padding: 30px;
+	margin-top: 15vh;
 	color: $main-font-color;
 
 	&:before,
@@ -45,7 +46,7 @@ body {
 		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 		left: -4px;
 		top: 4px;
-		transform: rotate(-1.3deg);
+		transform: rotate(-.7deg);
 	}
 
 	&:after {
@@ -53,7 +54,7 @@ body {
 		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 		right: -3px;
 		top: 1px;
-		transform: rotate(1.4deg);
+		transform: rotate(.9deg);
 	}
 
 	.header {
@@ -106,7 +107,7 @@ body {
 					color: $checked-color;
 				}
 				button.checked {
-					color:$checked-font-color;
+					color: $checked-font-color;
 				}
 				.delete-btn {
 					color: $delete-btn;
@@ -145,7 +146,7 @@ body {
 			width: 120px;
 			margin-top: 20px;
 			padding: 5px 20px;
-			border:none;
+			border: none;
 			font-family: 'Roboto', sans-serif;
 			font-size: 13px;
 			background-color: $modal-font-color;
@@ -153,7 +154,6 @@ body {
 			border-radius: 5px;
 			cursor: pointer;
 		}
-	
 	}
 	button:hover {
 		background-color: $button-hover-color;
@@ -183,7 +183,7 @@ body {
 		width: 100%;
 		padding: 5px;
 		background-color: $modal-font-color;
-		border:none;
+		border: none;
 		border-radius: 5px;
 		box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 	}
@@ -195,7 +195,6 @@ body {
 		button {
 			margin-top: 0;
 		}
-		
 	}
 }
 
@@ -258,5 +257,4 @@ body {
 			font-size: 16px;
 		}
 	}
-
 }
