@@ -183,6 +183,9 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
 }
 
 .modal .buttons button,
@@ -238,12 +241,6 @@ body {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}
-
-.popup .buttons {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 10px;
 }
 
 .popup .buttons button {

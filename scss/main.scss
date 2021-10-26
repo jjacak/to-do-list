@@ -141,6 +141,9 @@ body {
 	.buttons {
 		display: flex;
 		justify-content: center;
+		flex-wrap: wrap;
+		gap: 10px;
+		
 		button {
 			display: inline-block;
 			width: 120px;
@@ -189,9 +192,7 @@ body {
 	}
 
 	.buttons {
-		flex-wrap: wrap;
-		gap: 10px;
-
+		
 		button {
 			margin-top: 0;
 		}
