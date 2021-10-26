@@ -31,7 +31,6 @@ const hidePopup = (popup) => {
 
 const createListItem = () => {
 	if (todoInput.value) {
-
 		let newItem = document.createElement('li');
 		newItem.classList.add('todo-item');
 
@@ -89,12 +88,10 @@ const editTask = () => {
 };
 
 const markAllTasksAsCompleted = () => {
-
 	let allTodos = todosList.querySelectorAll('li');
 
-	const checkIfCompleted = (li) => {
-		return li.querySelector('p').classList.contains('checked');
-	};
+	const checkIfCompleted = (li) =>
+		li.querySelector('p').classList.contains('checked');
 
 	if (Array.from(allTodos).every(checkIfCompleted)) {
 		allTodos.forEach((li) => toggleCheckedClass(li));
@@ -107,9 +104,7 @@ const markAllTasksAsCompleted = () => {
 	}
 };
 
-const deleteAllTasks = () => {
-	todosList.innerText = '';
-};
+const deleteAllTasks = () => {todosList.innerText = ''};
 
 addTodoBtn.addEventListener('click', function () {
 	showPopup(createTodoPopup);
