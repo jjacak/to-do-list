@@ -31,10 +31,11 @@ const hidePopup = (popup) => {
 
 const createListItem = () => {
 	if (todoInput.value) {
+
 		let newItem = document.createElement('li');
 		newItem.classList.add('todo-item');
-		let newItemContent = todoInput.value;
-		newItem.innerHTML = `<p>${newItemContent}</p>
+
+		newItem.innerHTML = `<p>${todoInput.value}</p>
 <div class="todo-tools-panel">
     <button class="check-btn">
         <i class="fas fa-check"></i>
@@ -55,7 +56,7 @@ const checkClick = (e) => {
 	let li = e.target.parentElement.parentElement;
 
 	if (e.target.classList.contains('check-btn')) {
-		markTaskAsCompleted(li);
+		toggleCheckedClass(li);
 	} else if (
 		e.target.classList.contains('edit-btn') &&
 		!e.target.classList.contains('checked')
@@ -66,7 +67,7 @@ const checkClick = (e) => {
 	}
 };
 
-const markTaskAsCompleted = (li) => {
+const toggleCheckedClass = (li) => {
 	let taskTextContent = li.querySelector('p');
 	let checkBtn = li.querySelector('.check-btn');
 	let editBtn = li.querySelector('.edit-btn');
@@ -90,17 +91,17 @@ const editTask = () => {
 const markAllTasksAsCompleted = () => {
 
 	let allTodos = todosList.querySelectorAll('li');
-	
+
 	const checkIfCompleted = (li) => {
 		return li.querySelector('p').classList.contains('checked');
 	};
 
 	if (Array.from(allTodos).every(checkIfCompleted)) {
-		allTodos.forEach((li) => markTaskAsCompleted(li));
+		allTodos.forEach((li) => toggleCheckedClass(li));
 	} else {
 		allTodos.forEach((li) => {
 			if (!checkIfCompleted(li)) {
-				markTaskAsCompleted(li);
+				toggleCheckedClass(li);
 			}
 		});
 	}
@@ -127,7 +128,6 @@ closeEditPopupBtn.addEventListener('click', function () {
 });
 
 createTodoBtn.addEventListener('click', createListItem);
-
 todosList.addEventListener('click', checkClick);
 editTodoBtn.addEventListener('click', editTask);
 deleteAllBtn.addEventListener('click', deleteAllTasks);
